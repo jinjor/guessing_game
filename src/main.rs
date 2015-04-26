@@ -13,7 +13,6 @@ fn main() {
     let secret_number = (rand::random::<u32>() % 100) + 1;
 
     loop {
-
         println!("Please input your guess.");
 
         let mut input = "".to_string();
@@ -21,9 +20,7 @@ fn main() {
                            .ok()
                            .expect("Failed to read line");
 
-
         let input_num: Result<u32, ParseIntError> = FromStr::from_str(&input.trim());
-
         let num = match input_num {
             Ok(num) => num,
             _     => {
@@ -41,8 +38,8 @@ fn main() {
                 println!("You win!");
                 return;
             },
-       }
-   }
+        }
+    }
 }
 
 fn cmp(a: u32, b: u32) -> Ordering {
